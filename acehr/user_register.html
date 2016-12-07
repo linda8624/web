@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>申请注册</title>
+    <link rel="stylesheet" type="text/css" href="../doc/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../doc/css/styles_HR.css" />
+    <script type="text/javascript" src="../doc/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../doc/js/common.js"></script>
+    <script type="text/javascript" src="../doc/js/myjs.js"></script>
+    <script type="text/javascript" src="../doc/js/Menu.js"></script>
+  </head>
+
+  <body>
+     <div id="topbar"></div>
+    <div id="querybar"></div>
+ <div id="container">
+     <div class="main display-table">
+         <div class="display-td middle center loginDiv ">
+         <div class="bold text-c f22 "style="margin: 20px;">账户信息</div>
+
+         <div class=""><span style="margin-left: 90px;">　姓名</span><label class="labelName"></label><input class="h30 borders"  style="width: 56%;margin-left: 15px;outline: none;border: 1px solid#CCCCCC;padding: 5px;" type="text"><span>
+         </div>
+         <div style="margin: 20px;margin-left: 100px;"><span>性别</span><input type="radio" name="sex" value="male" style="margin-left: 20px;">男
+         <input type="radio" name="sex" value="female" style="margin-left: 30px;">女</div>
+        <div style="margin: 20px;margin-left: 90px;"><span style="">　手机</span><label class="labelName"></label><input class="h30 borders" type="text" style="width: 60%;margin-left: 15px;outline: none;border: 1px solid#CCCCCC;"></div>
+
+        <div style="margin: 20px;"><label class="labelName"><span style="margin-left: 60px;">　验证码</span></label><input class="h30 pd10 borders" type="text" style="width: 30%;margin-left: 15px;margin-right: 10px;outline: none;border: 1px solid#CCCCCC;padding: 5px;"><button class="btn-grey h35 pd20 borders" style="margin-left: 10px;">验证码</button></div>
+
+        <div style="margin: 20px;"><label class="labelName "><span style="margin-left: 60px;">公司邮箱</span></label><input class="h30 full-width borders" type="text" style="width: 60%;margin-left: 15px;outline: none;border: 1px solid#CCCCCC;padding: 5px;"></div>        
+
+        <div style="margin: 20px;"><label class="labelName"><span style="margin-left: 60px;">公司邮箱</span></label><input class="h30 full-width borders" type="text" style="width: 60%;margin-left: 15px;outline: none;border: 1px solid#CCCCCC;padding: 5px;"></div>        
+
+        <div style="margin: 20px;"><button type="submit" class="btn-red h30" style="width: 100px;margin-left: 170px;" onclick="nextregister()">下一步</button></div>  
+
+        <div class="h20 text-c grey" style="margin: 20px;">注册即同意本网站的<a href="#"; style="color: peru; font-size: 12px;">«用户协议»</a></div>
+          </div>
+     </div>
+     </div>
+    <div class="h100"></div>
+    <div id="bottombar"></div>
+  </body>
+</html>
+<script>
+  function nextregister(){
+    location.href = "company_detail.html";
+  }
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>ACE Elite 顾问在线</title>
+    <link rel="stylesheet" type="text/css" href="../doc/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../doc/css/styles_HR.css" />
+    <script type="text/javascript" src="../doc/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../doc/js/common.js"></script>
+    <script type="text/javascript" src="../doc/js/myjs.js"></script>
+    <script type="text/javascript" src="../doc/js/Menu.js"></script>
+  </head>
+
+  <body>
+    <div id="topbar"></div>
+    <div id="querybar"></div>
+</div>
+    <div id="container">
+      <div class="main display-table">
+          <div class="display-td middle center">
+          <table class="content bg-grey2" width="300"><tr>
+             <td class="pdall20" id="sendList">
+         <div class="bold text-c pdall20 f24">企业登录</div>
+         <div><label class="labelName"></label><input class="h30 full-width" type="text" placeholder="请输入手机号"></div>
+        <div class="h20"></div>
+        <div><label class="labelName"></label><input class="h30 full-width" type="text" placeholder="密码"></div>
+        <div class="h20"></div>
+        <div class="pdall5 text-r forgetPw"">忘记密码?</div>
+        <div class="h20"></div>
+        <div><button type="submit" class="loginSubmit btn-red full-width h30">登 录</button></div>
+        <div class="h20"></div>
+        <p class="text-c f14">没有账户?<span class="pd5 grey f12">申请注册</span></p></td></tr>   
+  
+        </table>
+          </div>
+        </div>
+      </div>
+    
+    
+    <div class="h100"></div>
+    <div id="bottombar"></div>
+  </body>
+</html>
+<script>
+  $(document).ready(function(){
+	  /***********此处编写js*************/
+    $(".forgetPw").click(function(){
+        location.href = "user_password_forget.html";
+    });
+    $(".loginSubmit").click(function(){
+        var sendList = $('#sendList').find('input');
+		    var phone1 = $(sendList[0]).val();
+		    var password = md5($(sendList[1]).val());
+		    ajax_("HIService.y?cmd=login", "{a1:'"+password+"',a2:'"+phone1+"'}",function(html0){
+		        if(html0.substring(0,1)==1){
+                html0 = html0.substr(2);
+                var js = JSON.parse(html0);
+		            ajax_("HIService.y?cmd=applyLogon", "{a0:'"+js.auid+"',a1:'"+password+"',a2:'"+phone1+"',usid:''}",function(html){
+		                if(html.substring(0,1)==1){
+		                    html = html.substr(2);
+		                    var js = JSON.parse(html);
+                        util.Cookie.set('hidataAUID',js.user.auid,30);
+                        util.Cookie.set('hidataMID',js.user.mid,30);
+                        util.Cookie.set('hidataAMID',js.user.amid,30);
+		                    util.Cookie.set('hidataNickName',js.user.nickName,30);
+		                    util.Cookie.set('hidataMMGroup',js.user.mmGroup,30);
+		                    util.Cookie.set('hidataMMGroupDesc',js.user.mmGroupDesc,30);
+		                    util.Cookie.set('hidataMMFace',js.user.face,30);
+		                    util.Cookie.set('hidataUploadURL',js.server.LW_SERVER,30);
+		                    util.Cookie.set('hidataPIC_MAX_NUM',js.server.PIC_MAX_NUM,30);
+		                    util.Cookie.set('hidataAVI_MAX_NUM',js.server.AVI_MAX_NUM,30);
+		                    util.Cookie.set('hidataPIC_MAX_SIZE',js.server.PIC_MAX_SIZE,30);
+		                    util.Cookie.set('hidataAVI_MAX_SIZE',js.server.AVI_MAX_SIZE,30);
+		                    util.Cookie.set('hidataYOUKU_APPKEY',js.server.YOUKU_APPKEY,30);
+		                    util.Cookie.set('hidataYOUKU_SECRET',js.server.YOUKU_SECRET,30);
+		                    util.Cookie.set('hidataYOUKU_ACCESS_TOKEN',js.server.YOUKU_ACCESS_TOKEN,30);
+		                    window.location.href = 'main.html';
+		                }else{
+		                    alert('用户名或者密码错误');
+		                }
+		            });
+		        }else{
+		            alert('用户名或者密码错误');
+		        }
+		    });
+    });
+	  
+	  
+	
+	  /**********************************/
+});
+</script>

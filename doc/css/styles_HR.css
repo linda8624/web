@@ -1,0 +1,133 @@
+
+body {
+  min-width: 960px;
+  min-height: 588px;
+  background-color:#f5f5f5;
+}
+.main {
+  width: 960px;
+  height: 100%;
+  margin:0 auto;
+}
+
+#topbar {
+  height: 70px;
+  background-color:#ffef25;
+}
+#topbar .logo {
+  width: 200px;
+  font-size: 30px;
+  line-height: 100%;
+  color: #202020;
+}
+
+#menubar {
+  height: 70px;
+  background-color: #a5a5a5;
+}
+
+#querybar {
+  height: 100px;
+}
+#querybar .title {text-align: center; font-size:16px; font-weight:bold; line-height:200%; color: #202020;}
+
+#container {
+  min-height: 588px;
+}
+#container .new {}
+.content {
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(215, 215, 215, 1);
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}
+
+#bottombar {
+  height: 105px;
+  background-color:#d5d5d5;
+}
+
+.arrow {
+  width:12px;
+  height:8px;
+}
+.thistab {
+  text-decoration:underline;
+  font-weight:bold;
+  color:#404040;
+}
+
+/**************************** menu ********************************/
+.nav-main {cursor: pointer;}
+.menu a:link,
+.menu a:visited,
+.menu a:focus {
+  color:#f0f0e0;
+}
+.menu a:hover,
+.menu a:active {
+  color:#404040;
+}
+
+/*图标向上旋转*/
+.hover-up{transition-duration:.5s;transform:rotate(180deg);-webkit-transform:rotate(180deg); }
+/*图标向下旋转*/
+.hover-down{transition-duration:.5s;transform:rotate(0);-webkit-transform:rotate(0)}
+/*隐藏盒子设置*/
+div.hidden-box{width:103px;position:absolute;display:none; background:#858585 url(images/sj2.png) no-repeat  top center;top:40px;filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8;}
+.hidden-box>p{list-style-type:none; color:#fff; cursor:pointer; padding-top:5px;padding-bottom:5px}
+.hidden-box>p span{ line-height:30px; height:30px; font-weight:500}
+/*.hidden-box li:hover{background:#643519;color:#fff}*/
+
+/*隐藏盒子位置设置*/
+.hidden-loc-index{left:284px}
+.hidden-loc-us{left:417px}
+.hidden-loc-info{left:550px}
+.box04{left:683px}
+/******************************************************************/
+
+.borders{border-radius: 1px;}
+.layout{width:500px; min-height: 500px;background-color: #e4e4e4;     margin-top: 60px;margin-left: 150px;margin-bottom: 60px; }
+.layout h1{font-size:20px; text-align: center;line-height: 60px; height: 60px;color: #363636; }
+.uploadImgContainer{position: relative;width: 65%;height:100%;padding: 20px 15% 20px 20%;margin-left: 0px;}
+.uploadImgw{position: absolute;}
+.uploadImgContainer .upimgbox .upFileBox {
+ position: absolute;
+ width: 110px;
+ height: 110px;
+ left: 0px;
+ top: 0;
+ opacity: 0;
+ cursor: pointer;
+ z-index: 100;
+ }
+.uploadImgContainer .upimgbox.isAddBtn:after {}
+.uploadImgContainer .upimgbox.isAddBtn:before{height: 110px;line-height: 110px;text-align: center;content: "上传公司Logo";position: absolute;margin-left: 15px;font-size: 12px;}
+.uploadImgContainer .upimgbox.isAddBtnrights:before{height: 110px;line-height: 110px;text-align: center;content: "上传营业执照";position: absolute;margin-left: 15px;font-size: 12px;}
+.uploadImgContainer img{width: 100%;height: 100%;position: absolute;border: none;}
+.uploadImgContainer .upimgbox.active {width: 110px;height: 110px;/* border: 1px dashed #aaa; */background-color: #fff;float: left;position: relative;}
+.inputLayout input{width: 304px; line-height: 25px; height: 25px;margin-top:30px;margin-left: 5px;}
+.inputLayout select:first-child{margin-right: 20px;}
+.inputLayout .selOut{width: 304px;line-height: 25px;height: 25px;border:1px solid #000000 opacity:0.5;margin-top:30px;margin-left: 5px;}
+.textAr{width: 288px; line-height: 14px; height: 60px;margin-top:20px; padding: 10px;margin-bottom: 30px;position: relative; margin-left: 98px;}
+.topview{height: 200px;margin: 20px;background-color:#e4e4e4;}
+.titleView{float: left;width:50%;line-height: 106px;margin-left: 20px;margin-top: 5px;}
+.titleView h1{height: 30px;line-height: 30px;color: #000000;font-size: 20px;}
+.titleView .detailtitle{height: 20px;line-height: 30px;font-size: 14px;margin-right:5px;}
+.titleView .detailtitle span{height: 20px;line-height: 30px;font-size: 14px;margin-right:20px;color: #323232;}
+.titleView .detailtitle .subTitle{height: 20px;line-height: 20px;width:150px;margin-top: 1px;font-size: 13px;margin-right:20px;float: left;display: block;vertical-align: middle;}
+.titleView .detailtitle .guanzhu{height: 20px;line-height: 20px;padding: 1px 5px;font-size: 12px;margin-right:20px;float: left;display: block;text-align: center;float: left; color: white;background-color: #666666;border-radius: 5px;}
+.titleView .maginTop{margin-top: 20px;}
+.hotSearch dt,.hotSearch dd {
+    float: left
+}
+input:focus{
+     border: 1px;
+    border-style:solid;
+    border-color:yellow;
+    outline：none
+}
+.loginDiv{width: 480px;background-color: white;border-style:none;}
